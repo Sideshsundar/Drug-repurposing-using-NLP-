@@ -1,0 +1,38 @@
+1. *Attention Map Visualization:*
+   - This section involves plotting attention maps, which are likely derived from a model like BERT (or a variant like RoBERTa). The code shows how to visualize the attention weights between different tokens in a sequence. The plot_attention function creates a heatmap using imshow to represent the attention scores between 'query' and 'key' tokens.
+   - The function includes customization of the plot, such as setting tick labels (with modifications to the token strings), adjusting the axis labels, and setting the interpolation and color map for the heatmap.
+
+2. *Query and Key Scores in Model Layers:*
+   - This part is focused on extracting the 'query' and 'key' scores from a specific layer of a transformer model (like RoBERTa). It involves tokenizing input text, converting these tokens to their respective IDs, and then passing them through the model.
+   - The code registers forward hooks to capture the output of the query and key layers within the specified model layer. This allows for an analysis of how the model is processing the input at a specific layer, which can be critical for understanding model behavior or for debugging.
+
+3. *Drug Side Effects Analysis:*
+   - These cells seem to be analyzing the side effects of drugs using a model. It involves iterating over a list of drugs and targets (like 'side effects'), converting these to a suitable format for the model, and then obtaining scores.
+   - The results are used to create bar plots, ranking drugs based on their side effects. This visualization helps in comparing different drugs or drug combinations based on their side effects, which is crucial in medical research and pharmacology.
+
+4. *Image Display:*
+   - There is a cell with a command to display an image, probably related to the analysis or the data used in the notebook. This could be a visual representation of data or results relevant to the study.
+
+combine both and provide me a combined version
+
+1. *Target Document Triage*: The study utilized the MEDLINE database, which contains over 24 million biomedical literature citations. The researchers filtered out irrelevant documents, focusing on those concerning disease–gene, gene–drug, and disease–drug relationships.
+
+2. *Predefined Lexicon Compiling*: A lexicon of named entities related to diseases, drugs, and targets was compiled from the Therapeutic Target Database (TTD). This lexicon was used to filter the MEDLINE database to identify relevant documents.
+
+3. *Irrelevant Document Filtering*: Apache Lucene, a high-performance search engine, was used to search the MEDLINE database and remove documents not mentioning the disease, gene, or drug entities identified in the predefined lexicon.
+
+4. *Relationship Extraction*: The study employed a semantic pattern-based relationship extraction method. Named Entity Recognition (NER) was used to locate and classify elements like diseases, genes, or drugs. Dependency tree parsing was used to understand the syntactic structure of sentences and identify relationships.
+
+5. *Trigger Word Learning*: The Comparative Toxicogenomics Database (CTD) was used to collect trigger words, which are crucial for extracting correct relationships. These words were used to identify meaningful relationships in the documents.
+
+6. *Repurposed Drug Prioritization*: The ABC model was used to infer indirect disease–drug relationships based on direct disease–gene and gene–drug relationships. A drug vector space model and drug target similarity ranking were developed to prioritize potential repurposed drugs.
+
+7. *Drug Vector Space Model*: This model represents drugs based on their linkage to genes, enabling the calculation of drug similarity.
+
+8. *Drug Target Similarity Ranking*: The similarity of each repurposed drug to approved drugs was quantified using the Jaccard index to identify promising repurposing candidates.
+
+9. *Evaluation Methods*: The methodology's effectiveness was validated through relationship extraction evaluation, drug similarity evaluation, and drug repurposing evaluation. These evaluations used various datasets and metrics to verify the accuracy and utility of the extracted relationships and the drug similarity calculations.
+
+10. *Miscellaneous Assessments*: The study also considered the importance of comprehensive lexicons and the potential for using machine learning-based methods to refine the system further.
+
+11. *Visualization*: The study used a chord diagram to illustrate the relationships between original and new indications for repurposed drugs.
